@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SqlToNoSql/src" modelPluginID="SqlToNoSql" modelName="SqlMetamodel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>SqlMetamodel.ecore</foreignModel>
+  <genPackages prefix="SqlMetamodel" disposableProviderFactory="true" ecorePackage="SqlMetamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SqlMetamodel.ecore#//TypeData">
+      <genEnumLiterals ecoreEnumLiteral="SqlMetamodel.ecore#//TypeData/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="SqlMetamodel.ecore#//TypeData/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="SqlMetamodel.ecore#//TypeData/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="SqlMetamodel.ecore#//TypeData/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="SqlMetamodel.ecore#//TypeData/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="SqlMetamodel.ecore#//TypeData/DATE"/>
+    </genEnums>
+    <genClasses ecoreClass="SqlMetamodel.ecore#//Schema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SqlMetamodel.ecore#//Schema/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SqlMetamodel.ecore#//Schema/table"/>
+    </genClasses>
+    <genClasses ecoreClass="SqlMetamodel.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SqlMetamodel.ecore#//Table/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SqlMetamodel.ecore#//Table/column"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SqlMetamodel.ecore#//Table/constraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SqlMetamodel.ecore#//Table/primaryKey"/>
+    </genClasses>
+    <genClasses ecoreClass="SqlMetamodel.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SqlMetamodel.ecore#//Column/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SqlMetamodel.ecore#//Column/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SqlMetamodel.ecore#//Column/nullable"/>
+    </genClasses>
+    <genClasses ecoreClass="SqlMetamodel.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SqlMetamodel.ecore#//Constraint/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SqlMetamodel.ecore#//ForeingKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SqlMetamodel.ecore#//ForeingKey/refTable"/>
+    </genClasses>
+    <genClasses ecoreClass="SqlMetamodel.ecore#//PrimaryKey"/>
+  </genPackages>
+</genmodel:GenModel>
